@@ -50,6 +50,7 @@ MainNav.propTypes = {
 
 const initialState = false;
 
+// updates the state by responding the the action and returning a new state
 function reducer(state, action) {
   switch (action.type) {
     case OPEN:

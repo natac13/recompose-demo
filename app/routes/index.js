@@ -3,15 +3,15 @@ import { Router, Route } from 'react-router';
 
 import App from '../containers/App/';
 
-import withPropsClass from '../components/withProps/classVersion';
-import withPropsFunction from '../components/withProps/functionalVersion';
+import withReducerClass from '../components/withReducer/classVersion';
+import withReducerFunction from '../components/withReducer/functionalVersion';
 
 export default function configureRoutes(history) {
   return (
     <Router history={history}>
       <Route path="/" component={App}>
-        <Route path="withPropsClass" component={withPropsClass} />
-        <Route path="withPropsFunction" component={withPropsFunction} />
+        <Route path="withReducerClass" component={withReducerClass} />
+        <Route path="withReducerFunction" component={withReducerFunction} />
       </Route>
     </Router>
   );
