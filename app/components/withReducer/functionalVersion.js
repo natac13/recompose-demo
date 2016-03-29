@@ -5,7 +5,7 @@ import radium from 'radium';
 
 import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menus/menu-item';
-import RaisedButton from 'material-ui/lib/raised-button';
+import FlatButton from 'material-ui/lib/flat-button';
 
 import styles from './styles.js';
 
@@ -18,17 +18,17 @@ function MainNav(props) {
   return (
     <div style={[styles.wrapper]}>
     hello from The Class version
-      <RaisedButton
+      <FlatButton
         label="Open Nav!"
         onTouchTap={() => dispatch({ type: OPEN })}
         backgroundColor="green"
       />
-      <RaisedButton
+      <FlatButton
         label="Close Nav!"
         onTouchTap={() => dispatch({ type: CLOSE })}
         backgroundColor="blue"
       />
-      <RaisedButton
+      <FlatButton
         label="Toggle Nav!"
         onTouchTap={() => dispatch({ type: TOGGLE })}
         backgroundColor="red"

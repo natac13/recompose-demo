@@ -3,8 +3,4 @@ export default {
     width: '50%',
     margin: 'auto',
   },
-  toggleBtn: {
-    backgroundColor: 'red',
-    color: '#fff',
-  },
 };

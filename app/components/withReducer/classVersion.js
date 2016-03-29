@@ -3,7 +3,7 @@ import radium from 'radium';
 
 import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menus/menu-item';
-import RaisedButton from 'material-ui/lib/raised-button';
+import FlatButton from 'material-ui/lib/flat-button';
 
 import styles from './styles.js';
 
@@ -24,10 +24,10 @@ class MainNav extends Component {
     return (
         <div style={[styles.wrapper]}>
         hello from The Class version
-          <RaisedButton
+          <FlatButton
             label="Open Nav!"
             onTouchTap={this.handleClick}
-            backgroundColor="red"
+            style={ styles.toggleBtn }
           />
           <LeftNav open={this.state.isOpen}>
             <MenuItem>This is...</MenuItem>
