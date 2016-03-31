@@ -1,5 +1,7 @@
 import express from 'express';
 import path from 'path';
+import Promise from 'bluebird';
+const readFile = Promise.promisify(require('fs').readFile);
 
 const port = process.env.PORT || 3013;
 
@@ -22,16 +24,27 @@ const webpackOptions = {
 
 // Controllers
 
+const apiRouter = express.Router();
+apiRouter.get('/todos', (req, res) => {
+  try {
+    const result = require('./app/assets/todoList.json');
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 
-let app = express();
+const app = express();
 
 app.use(webpackMiddleware(compiler, webpackOptions));
 app.use(webpackHotMiddleware(compiler));
 
 app.use(express.static(path.join(__dirname, '../build')));
+app.use('/api', apiRouter);
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
+
 
 app.listen(port, 'localhost', () => {
   console.log('Listening on Port ' + port);

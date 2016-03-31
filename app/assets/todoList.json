@@ -1,0 +1,14 @@
+[
+    {
+        "todo": "Go to Functional Meetup",
+        "completed": false
+    },
+    {
+        "todo": "Explain how recompose helps turn class -> functions",
+        "completed": false
+    },
+    {
+        "todo": "Build a better web watch",
+        "completed": true
+    }
+]
